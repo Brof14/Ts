@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Детальный обзор | TsoiStore</title>
+  <meta name="description" content="Подробное описание товара, отзывы, сравнение и подарки при покупке.">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark premium-bg shadow-sm">
+          <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+              <img src="img/logo.png" alt="TsoiStore Logo" class="logo-img mr-2">
+              <span>TsoiStore</span>
+            </a>
+            <div class="ml-auto d-flex align-items-center">
+              <select id="lang-switcher" class="custom-select custom-select-sm language-switcher">
+                <option value="ru" selected>RU</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Корзина</a></li>
+                <li class="nav-item"><a class="nav-link" href="favorites.html">Избранное</a></li>
+                <li class="nav-item"><a class="nav-link" href="account.html">Личный кабинет</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">О компании</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="help.html">Помощь</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+  <section class="product-detail container my-5">
+    <div class="row">
+      <!-- Слайдер изображений -->
+      <div class="col-md-6">
+        <div class="product-carousel">
+          <div><img src="img/iphone_detail1.jpg" alt="Фото 1" class="img-fluid"></div>
+          <div><img src="img/iphone_detail2.jpg" alt="Фото 2" class="img-fluid"></div>
+          <div><img src="img/iphone_detail3.jpg" alt="Фото 3" class="img-fluid"></div>
+        </div>
+      </div>
+      <!-- Описание товара -->
+      <div class="col-md-6">
+        <h2>TsoiStore представляет: iPhone 16 Pro</h2>
+        <p>Новейший смартфон с передовыми технологиями, роскошным дизайном и эксклюзивными материалами.</p>
+        <ul class="list-unstyled specs">
+          <li><strong>Процессор:</strong> A16 Bionic</li>
+          <li><strong>Память:</strong> 128GB / 256GB / 512GB</li>
+          <li><strong>Камера:</strong> Тройная система камер</li>
+          <li><strong>Дисплей:</strong> Super Retina XDR</li>
+          <li><strong>Батарея:</strong> Улучшенная</li>
+          <li><strong>ОС:</strong> iOS 18</li>
+        </ul>
+        <div class="price my-3">
+          <h4>1199 USD</h4>
+        </div>
+        <!-- Блок подарков -->
+        <div class="gift-info my-3 p-3 bg-light rounded shadow-sm">
+          <h5>В подарок!</h5>
+          <p>Комплектация: Коробка, кабель, <span class="gift-item">🎁 Чехол</span>, <span class="gift-item">🎁 Защитное стекло</span></p>
+        </div>
+        <!-- Выбор цвета -->
+        <div class="color-selection mb-3">
+          <p>Выберите цвет:</p>
+          <button class="btn btn-outline-primary color-btn" data-color="Black">Black</button>
+          <button class="btn btn-outline-primary color-btn" data-color="White">White</button>
+        </div>
+        <div class="action-buttons my-3">
+          <a href="cart.html" class="btn btn-primary btn-lg">Купить</a>
+          <button class="btn btn-secondary btn-lg" id="add-to-favorites">В избранное</button>
+          <button class="btn btn-info btn-lg" id="add-to-compare">Добавить в сравнение</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Отзывы -->
+    <div class="reviews my-5">
+      <h3>Отзывы покупателей</h3>
+      <div id="reviews-container"></div>
+      <form id="review-form" class="mt-4">
+        <div class="form-group">
+          <label for="review-text">Оставьте отзыв:</label>
+          <textarea id="review-text" class="form-control" rows="3" placeholder="Ваш отзыв"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Отправить отзыв</button>
+      </form>
+    </div>
+
+    <!-- Сравнение товаров -->
+    <div class="comparison-section my-5">
+      <h3>Сравнение товаров</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Модель</th>
+            <th>Процессор</th>
+            <th>Память</th>
+            <th>Камера</th>
+          </tr>
+        </thead>
+        <tbody id="compare-table-body">
+          <!-- Здесь могут динамически добавляться до 5 товаров -->
+          <tr>
+            <td>iPhone 16 Pro</td>
+            <td>A16 Bionic</td>
+            <td>128GB / 256GB / 512GB</td>
+            <td>Тройная система</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-danger" id="clear-compare">Очистить сравнение</button>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer premium-bg text-white py-4">
+    <div class="container text-center">
+      <p>&copy; 2025 TsoiStore. Все права защищены.</p>
+      <a href="https://web.telegram.org/k/#@TsoiStore" target="_blank" class="telegram-link">
+        <i class="fab fa-telegram fa-2x"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
